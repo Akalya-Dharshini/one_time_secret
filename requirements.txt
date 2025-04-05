@@ -58,3 +58,6 @@ urllib3==2.2.2
 virtualenv==20.25.1
 wcwidth==0.2.13
 Werkzeug==3.1.3
+qrcode==7.3.1  # or the latest version available
+flask==2.0.2  # make sure other dependencies are also listed
+gunicorn==20.1.0
