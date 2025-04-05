@@ -1,0 +1,23 @@
+{
+    "name": "One-Time Secret",
+    "short_name": "SecretShare",
+    "description": "Secure, one-time secret sharing tool",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4f46e5",
+    "orientation": "portrait",
+    "icons": [
+      {
+        "src": "/static/icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/static/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  

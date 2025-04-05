@@ -1,0 +1,23 @@
+<!-- templates/landing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One-Time Secret | Secure Share</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="landing-hero">
+    <h1>🔐 One-Time Secret</h1>
+    <p>
+      Share sensitive information like passwords, tokens, and confidential messages securely.<br>
+      Secrets can only be viewed once and then they disappear forever.
+    </p>
+    <br>
+    <a href="{{ url_for('index') }}">
+      <button>Create a Secret</button>
+    </a>
+  </div>
+</body>
+</html>

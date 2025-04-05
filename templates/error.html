@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops! Secret Expired</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Oops! This Secret Has Expired</h1>
+    </header>
+
+    <main>
+        <p>Unfortunately, the secret link you tried to open has expired. Please contact the sender for a new link.</p>
+        <a href="{{ url_for('index') }}" class="cta-button">Create a New Secret</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 One-Time Secret Sharing Platform</p>
+    </footer>
+</body>
+</html>

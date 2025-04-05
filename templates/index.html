@@ -1,0 +1,35 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Secret</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Create a One-Time Secret</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <label for="secret">Enter your secret:</label>
+      <textarea id="secret" name="secret" rows="4" required></textarea>
+
+      <label for="expire">Expire after (in minutes):</label>
+      <select id="expire" name="expire" required>
+        <option value="5">5 minutes</option>
+        <option value="15">15 minutes</option>
+        <option value="60">1 hour</option>
+        <option value="1440">1 day</option>
+      </select>
+
+      <label for="email">Notify email (optional):</label>
+      <input type="email" name="email" placeholder="example@gmail.com" />
+
+      <label for="file">Attach a file (optional):</label>
+      <input type="file" name="file" />
+
+      <button type="submit">Generate Secret</button>
+    </form>
+  </div>
+</body>
+</html>

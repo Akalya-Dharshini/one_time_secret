@@ -1,0 +1,37 @@
+<!-- templates/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secret Created</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    function copyToClipboard() {
+      const linkInput = document.getElementById('secretLink');
+      linkInput.select();
+      linkInput.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      alert("Link copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>✅ Secret Created!</h2>
+    <p>Share this link. It will expire after one view or the set time limit.</p>
+
+    <div class="link-box">
+      <input type="text" id="secretLink" value="{{ link }}" readonly>
+      <button onclick="copyToClipboard()">Copy Link</button>
+    </div>
+
+    {% if qr_url %}
+    <h3 style="text-align:center;">Scan QR Code</h3>
+    <img src="{{ qr_url }}" alt="QR Code" class="qr-image">
+    {% endif %}
+
+    <p style="text-align:center;">Don't lose this link! You won't be able to see the secret again.</p>
+  </div>
+</body>
+</html>

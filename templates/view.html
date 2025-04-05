@@ -1,0 +1,47 @@
+<!-- templates/view.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Secret</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    // Disable back navigation
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+
+    function downloadFile(filename, data) {
+      const element = document.createElement('a');
+      element.setAttribute('href', data);
+      element.setAttribute('download', filename);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+  </script>
+</head>
+<body class="view-page">
+  <div class="container">
+    <h2>🔓 Your One-Time Secret</h2>
+
+    {% if secret %}
+      <div class="alert">{{ secret }}</div>
+    {% endif %}
+
+    {% if file_data and file_name %}
+      <button onclick="downloadFile('{{ file_name }}', '{{ file_data }}')">Download Attached File</button>
+    {% endif %}
+
+    {% if qr_url %}
+      <h3 style="text-align:center;">QR Code (Scan or Save)</h3>
+      <img src="{{ qr_url }}" alt="QR Code" class="qr-image">
+    {% endif %}
+    
+    <p style="text-align:center; color:gray;">This message will no longer be accessible again.</p>
+  </div>
+</body>
+</html>
